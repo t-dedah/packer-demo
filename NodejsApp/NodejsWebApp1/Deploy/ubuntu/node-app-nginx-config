@@ -1,4 +1,4 @@
-server {
+server1 {
     listen 80;
     server_name localhost;
 

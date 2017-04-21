@@ -1,5 +1,5 @@
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs1
 
 sudo apt-get install nginx -y
 sudo rm /etc/nginx/sites-enabled/default
