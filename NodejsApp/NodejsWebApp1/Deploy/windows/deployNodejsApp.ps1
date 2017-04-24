@@ -17,6 +17,8 @@ $InetPubWWWRoot = "C:\Inetpub\WWWRoot"
 # --------------------------------------------------------------------
 $Command = "icacls ..\ /grant ""Network Service"":(OI)(CI)W"
 cmd.exe /c $Command
+$Command = "icacls C:\NVM\ /grant ""Network Service"":(OI)(CI)W"
+cmd.exe /c $Command
 
 # --------------------------------------------------------------------
 # Loading IIS Modules
