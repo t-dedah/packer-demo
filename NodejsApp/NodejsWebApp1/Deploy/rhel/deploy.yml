@@ -1,5 +1,5 @@
 # ./ansible-nginx/deploy.yml
 
-- hosts: default
+- hosts: localhost
   tasks:
     - include: 'tasks/install_nginx.yml'
