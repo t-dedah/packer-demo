@@ -1,5 +1,5 @@
-sudo yum install epel-release
-sudo yum install ansible
+sudo yum install epel-release -y
+sudo yum install ansible -y
 
 mkdir -p $HOME/ansible-nginx/tasks/
 script_dir=$(dirname "$0")
