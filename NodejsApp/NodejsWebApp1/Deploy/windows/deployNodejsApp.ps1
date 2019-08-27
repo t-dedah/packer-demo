@@ -176,8 +176,6 @@ installUrlRewrite
 
 #SetupWeb.ps1
 
-Set-ExecutionPolicy Unrestricted
-
 if(Get-Website -Name "Default Web Site")
 {
     Remove-WebSite -Name "Default Web Site"
