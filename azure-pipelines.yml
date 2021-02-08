@@ -29,7 +29,7 @@ steps:
     storageAccountName: 'storageaccountbisha91f6'
     azureResourceGroup: 'bishalwindedicatedpython'
     baseImageSource: 'default'
-    baseImage: 'MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:windows'
+    baseImage: 'MicrosoftWindowsServer:WindowsServer:2016-Datacenter:windows'
     packagePath: 'NodejsApp/NodejsWebApp1'
     deployScriptPath: 'Deploy/windows/deployNodejsApp.ps1'
     imageUri: 'imageUrl'
