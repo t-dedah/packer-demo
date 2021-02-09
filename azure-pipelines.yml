@@ -20,19 +20,19 @@ steps:
 #     npm run build
 #   displayName: 'npm install and build'
 
-- task: PackerBuild@1
-  inputs:
-    templateType: 'builtin'
-    ConnectedServiceName: 'RMDev(c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
-    isManagedImage: false
-    location: 'southindia'
-    storageAccountName: 'diaggarwdiag'
-    azureResourceGroup: 'diaggarw'
-    baseImageSource: 'default'
-    baseImage: 'MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:windows'
-    packagePath: 'NodejsApp/NodejsWebApp1'
-    deployScriptPath: 'Deploy/windows/deployNodejsApp.ps1'
-    imageUri: 'imageUrl'
+# - task: PackerBuild@1
+#   inputs:
+#     templateType: 'builtin'
+#     ConnectedServiceName: 'RMDev(c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
+#     isManagedImage: false
+#     location: 'southindia'
+#     storageAccountName: 'diaggarwdiag'
+#     azureResourceGroup: 'diaggarw'
+#     baseImageSource: 'default'
+#     baseImage: 'MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:windows'
+#     packagePath: 'NodejsApp/NodejsWebApp1'
+#     deployScriptPath: 'Deploy/windows/deployNodejsApp.ps1'
+#     imageUri: 'imageUrl'
 
 # - task: PackerBuild@1
 #   inputs:
@@ -47,3 +47,30 @@ steps:
 #     packagePath: 'NodejsApp/NodejsWebApp1'
 #     deployScriptPath: 'Deploy/windows/deployNodejsApp.ps1'
 #     imageUri: 'imageUrl'
+# - task: AzureVmssDeployment@0
+#   inputs:
+#     azureSubscription: 'RMDev(c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
+#     action: 'Configure application startup'
+#     vmssName: 'teestPacker'
+#     vmssOsType: 'Linux'
+
+- task: AzureVmssDeployment@0
+  inputs:
+    azureSubscription: 'RMDev(c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
+    action: 'Configure application startup'
+    vmssName: 'teestPacker'
+    vmssOsType: 'Linux'
+    customScriptsDirectory: '$(System.DefaultWorkingDirectory)' 
+    customScript: 'sh script.sh'
+    customScriptsStorageAccount: 'diaggarwdiag'
+
+# - task: AzureVmssDeployment@0 
+#   displayName: 'Deploy custom script application' 
+#   inputs: 
+#     azureSubscription: 'Deploy a custom script app on VMSS Agents-Dev - 1 - Azure' 
+#     action: 'Configure application startup' 
+#     vmssName: 'Agents-Dev' 
+#     vmssOsType: Linux 
+#     customScriptsDirectory: '$(System.DefaultWorkingDirectory)' 
+#     customScript: 'sh script.sh'
+#     customScriptsStorageAccount: customscriptagents
