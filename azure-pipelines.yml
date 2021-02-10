@@ -54,11 +54,21 @@ steps:
 #     vmssName: 'teestPacker'
 #     vmssOsType: 'Linux'
 
+# - task: AzureVmssDeployment@0
+#   inputs:
+#     azureSubscription: 'RMDev(c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
+#     action: 'Configure application startup'
+#     vmssName: 'teestPacker'
+#     vmssOsType: 'Linux'
+#     customScriptsDirectory: '$(System.DefaultWorkingDirectory)' 
+#     customScript: 'chmod 0777 script.sh && sh script.sh'
+#     customScriptsStorageAccount: 'diaggarwdiag'
+
 - task: AzureVmssDeployment@0
   inputs:
     azureSubscription: 'RMDev(c00d16c7-6c1f-4c03-9be1-6934a4c49682)'
     action: 'Configure application startup'
-    vmssName: 'teestPacker'
+    vmssName: 'testVMSSLinux'
     vmssOsType: 'Linux'
     customScriptsDirectory: '$(System.DefaultWorkingDirectory)' 
     customScript: 'chmod 0777 script.sh && sh script.sh'
