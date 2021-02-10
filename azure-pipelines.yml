@@ -71,7 +71,7 @@ steps:
     vmssName: 'testVMSSLinux'
     vmssOsType: 'Linux'
     customScriptsDirectory: '$(System.DefaultWorkingDirectory)' 
-    customScript: 'chmod 0777 script.sh && sh script.sh'
+    customScript: 'script.sh'
     customScriptsStorageAccount: 'diaggarwdiag'
 
 # - task: AzureVmssDeployment@0 
