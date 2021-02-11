@@ -20,7 +20,8 @@ steps:
 #     npm install
 #     npm run build
 #   displayName: 'npm install and build'
-- task: PackerBuild@1
+
+- task: PackerBuildTest@1
   inputs:
     templateType: 'builtin'
     ConnectedServiceName: 'manual'
@@ -33,6 +34,19 @@ steps:
     packagePath: 'NodejsApp/NodejsWebApp1'
     deployScriptPath: 'Deploy/windows/deployNodejsApp.ps1'
     imageUri: 'imageUrl'
+# - task: PackerBuild@1
+#   inputs:
+#     templateType: 'builtin'
+#     ConnectedServiceName: 'manual'
+#     isManagedImage: false
+#     location: 'southindia'
+#     storageAccountName: 'diaggarwdiag'
+#     azureResourceGroup: 'diaggarw'
+#     baseImageSource: 'default'
+#     baseImage: 'MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:windows'
+#     packagePath: 'NodejsApp/NodejsWebApp1'
+#     deployScriptPath: 'Deploy/windows/deployNodejsApp.ps1'
+#     imageUri: 'imageUrl'
 
 # - task: PackerBuild@0
 #   inputs:
